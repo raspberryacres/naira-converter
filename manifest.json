@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Naira Price Converter",
+  "version": "1.0.0",
+  "description": "Automatically shows the naira equivalent beside USD, EUR and GBP prices on any page.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://open.er-api.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Naira Price Converter",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["parser.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

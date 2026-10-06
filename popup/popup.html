@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <h1>₦ Naira Converter</h1>
+    <label class="switch" title="Turn conversion on/off">
+      <input type="checkbox" id="toggle" />
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <ul class="rates">
+    <li><span>1 USD</span><b id="usd">–</b></li>
+    <li><span>1 EUR</span><b id="eur">–</b></li>
+    <li><span>1 GBP</span><b id="gbp">–</b></li>
+  </ul>
+
+  <footer>
+    <span id="updated">Loading…</span>
+    <button id="refresh">Refresh</button>
+  </footer>
+
+  <p class="note">
+    Mid-market rates. Bank and parallel-market rates may differ.
+    <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener">Rates By Exchange Rate API</a>
+  </p>
+
+  <script src="popup.js"></script>
+</body>
+</html>
